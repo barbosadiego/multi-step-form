@@ -1,45 +1,57 @@
 import styled from 'styled-components';
 import pxToRem from '../helpers/pxToRem';
+import { Link } from 'react-router-dom';
+import LinkButton from '../components/LinkButton';
 
 const StepOne = () => {
   return (
-    <StyledContent>
-      <h3>Contact details</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisc.</p>
-      <form>
-        <div>
-          <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" placeholder="John Carter" />
-        </div>
-        <div>
-          <label htmlFor="phone">Phone Number</label>
-          <input
-            type="tel"
-            name="phone"
-            id="phone"
-            placeholder="Email address"
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="(123) 456-7890"
-          />
-        </div>
-        <div>
-          <label htmlFor="company">Company</label>
-          <input
-            type="text"
-            name="company"
-            id="company"
-            placeholder="Company name"
-          />
-        </div>
-      </form>
-    </StyledContent>
+    <>
+      <StyledContent>
+        <h3>Contact details</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisc.</p>
+        <form>
+          <div>
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="John Carter"
+            />
+          </div>
+          <div>
+            <label htmlFor="phone">Phone Number</label>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="Email address"
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="(123) 456-7890"
+            />
+          </div>
+          <div>
+            <label htmlFor="company">Company</label>
+            <input
+              type="text"
+              name="company"
+              id="company"
+              placeholder="Company name"
+            />
+          </div>
+        </form>
+      </StyledContent>
+      <Link to="/step_two">
+        <LinkButton>Next step</LinkButton>
+      </Link>
+    </>
   );
 };
 
