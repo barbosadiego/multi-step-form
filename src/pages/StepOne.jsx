@@ -2,13 +2,16 @@ import styled from 'styled-components';
 import pxToRem from '../helpers/pxToRem';
 import { Link } from 'react-router-dom';
 import LinkButton from '../components/LinkButton';
+import Info from '../components/Info';
 
 const StepOne = () => {
   return (
     <>
       <StyledContent>
-        <h3>Contact details</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisc.</p>
+        <Info
+          title="Contact details"
+          text="Lorem ipsum dolor sit amet consectetur adipisc."
+        />
         <form>
           <div>
             <label htmlFor="name">Name</label>
@@ -58,8 +61,6 @@ const StepOne = () => {
 export default StepOne;
 
 const StyledContent = styled.div`
-  margin-top: 60px;
-
   form {
     margin-top: 40px;
     display: grid;
