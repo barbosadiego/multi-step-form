@@ -4,7 +4,7 @@ import pxToRem from '../helpers/pxToRem';
 
 const theme = {
   color: {
-    primary: '#ff3951',
+    primary: '#4A3AFF',
     secondary: '#ffc226',
     neutral800: '#14142b',
     neutral700: '#4e4b66',
