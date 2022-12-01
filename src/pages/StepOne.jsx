@@ -52,7 +52,7 @@ const StyledContent = styled.div`
     margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 40px 20px;
 
     & > div {
       display: grid;
@@ -67,6 +67,7 @@ const StyledContent = styled.div`
 
     input {
       height: 60px;
+      width: 100%;
       border-radius: 46px;
       border: 1px solid ${({ theme }) => theme.color.neutral300};
       padding: 20px 50px 20px 20px;
