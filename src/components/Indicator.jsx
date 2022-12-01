@@ -18,6 +18,7 @@ const StyledIndicator = styled.div`
   justify-content: space-around;
   width: 100%;
   padding: 30px 0;
+  border-bottom: 1px solid ${({ theme }) => theme.color.neutral400};
 
   & > div {
     width: 34px;
@@ -28,5 +29,17 @@ const StyledIndicator = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+  }
+
+  & div + div::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100px;
+    height: 6px;
+    border-radius: 4px;
+    background-color: ${({ theme }) => theme.color.neutral300};
+    left: -108px;
   }
 `;
