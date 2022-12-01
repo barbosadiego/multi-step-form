@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import styled from 'styled-components';
 import App from './App';
 import { createGlobalStyle } from 'styled-components';
+import pxToRem from './helpers/pxToRem';
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -15,15 +15,40 @@ const GlobalStyle = createGlobalStyle`
     display: block;
   }
 
+  a{
+    text-decoration: none;
+  }
+
   ul, li, body, h1, h2, h3, h4, h5, h6, p{
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  a{
-    text-decoration: none;
+  h1{
+    font-size: ${pxToRem(50)};
+    font-weight: 700;
+    line-height: ${pxToRem(62)};
   }
+
+  h2{
+    font-size: ${pxToRem(34)};
+    font-weight: 700;
+    line-height: ${pxToRem(46)};
+  }
+
+  h3{
+    font-size: ${pxToRem(24)};
+    font-weight: 700;
+    line-height: ${pxToRem(35)};
+  }
+
+  h4{
+    font-size: ${pxToRem(22)};
+    font-weight: 700;
+    line-height: ${pxToRem(28)};
+  }
+
 `;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
