@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { createGlobalStyle } from 'styled-components';
+import { BrowserRouter } from 'react-router-dom';
 import pxToRem from './helpers/pxToRem';
 
 const GlobalStyle = createGlobalStyle`
@@ -54,6 +55,8 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <GlobalStyle />
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
 );
