@@ -5,6 +5,8 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import Form from './components/Form';
 import StepOne from './pages/StepOne';
 import { useEffect } from 'react';
+import StepTwo from './pages/StepTwo';
+import Container from './styles/container';
 
 const App = () => {
   const navigate = useNavigate();
@@ -15,18 +17,21 @@ const App = () => {
 
   return (
     <Theme>
-      <Header>
-        <h2>Get a project quote</h2>
-        <p>
-          Please fill the form below to receive a quote for your project. Feel
-          free to add as much detail as needed.
-        </p>
-      </Header>
-      <Routes>
-        <Route path="/" element={<Form />}>
-          <Route path="step_one" element={<StepOne />} />
-        </Route>
-      </Routes>
+      <Container>
+        <Header>
+          <h2>Get a project quote</h2>
+          <p>
+            Please fill the form below to receive a quote for your project. Feel
+            free to add as much detail as needed.
+          </p>
+        </Header>
+        <Routes>
+          <Route path="/" element={<Form />}>
+            <Route path="step_one" element={<StepOne />} />
+            <Route path="step_two" element={<StepTwo />} />
+          </Route>
+        </Routes>
+      </Container>
     </Theme>
   );
 };
