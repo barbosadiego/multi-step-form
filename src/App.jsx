@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 import Theme from './theme/theme';
 import pxToRem from './helpers/pxToRem';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Form from './components/Form';
 import StepOne from './pages/StepOne';
+import { useEffect } from 'react';
 
 const App = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate('/step_one');
+  }, []);
+
   return (
     <Theme>
       <Header>
