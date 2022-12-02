@@ -4,8 +4,21 @@ import { Link } from 'react-router-dom';
 import LinkButton from '../components/LinkButton';
 import Info from '../components/Info';
 import StepControl from '../components/StepControl';
+import { useContext, useEffect, useState } from 'react';
+import { StepContext } from '../contexts/StepContext';
 
 const StepOne = () => {
+  const { data, setData } = useContext(StepContext);
+  const [userData, setUserData] = useState({});
+
+  useEffect(() => {
+    setData({ ...data, atualStep: data.steps[0] });
+  }, []);
+
+  const handleSubmit = () => {
+    console.log(userData);
+  };
+
   return (
     <>
       <StyledContent>
@@ -21,24 +34,36 @@ const StepOne = () => {
               name="name"
               id="name"
               placeholder="John Carter"
+              value={userData.name}
+              onChange={(e) =>
+                setUserData({ ...userData, name: e.target.value })
+              }
             />
           </div>
           <div>
-            <label htmlFor="phone">Phone Number</label>
+            <label htmlFor="phone">Email</label>
             <input
               type="tel"
               name="phone"
               id="phone"
               placeholder="Email address"
+              value={userData.email}
+              onChange={(e) =>
+                setUserData({ ...userData, email: e.target.value })
+              }
             />
           </div>
           <div>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Phone number</label>
             <input
               type="text"
               name="email"
               id="email"
               placeholder="(123) 456-7890"
+              value={userData.phone}
+              onChange={(e) =>
+                setUserData({ ...userData, phone: e.target.value })
+              }
             />
           </div>
           <div>
@@ -48,12 +73,16 @@ const StepOne = () => {
               name="company"
               id="company"
               placeholder="Company name"
+              value={userData.company}
+              onChange={(e) =>
+                setUserData({ ...userData, company: e.target.value })
+              }
             />
           </div>
         </form>
       </StyledContent>
       <StepControl reverse>
-        <Link to="/step_two">
+        <Link to="/step_two" onClick={handleSubmit}>
           <LinkButton fill>Next step</LinkButton>
         </Link>
       </StepControl>
