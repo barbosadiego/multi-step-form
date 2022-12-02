@@ -1,19 +1,24 @@
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 
 export const StepContext = createContext();
 
-const data = {
-  step: ['one', 'two', 'three', 'four'],
-  user: {
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-  },
-  services: ['development', 'web design', 'marketing', 'other'],
-  budget: [],
-};
+export const StepContextProvider = ({ children }) => {
+  const [data, setData] = useState({
+    steps: ['one', 'two', 'three', 'four'],
+    atualStep: '',
+    user: {
+      name: '',
+      email: '',
+      phone: '',
+      company: '',
+    },
+    services: ['development', 'web design', 'marketing', 'other'],
+    budget: [],
+  });
 
-export const StepContextProvider = ({ children }) => (
-  <StepContext.Provider value={{ data }}>{children}</StepContext.Provider>
-);
+  return (
+    <StepContext.Provider value={{ data, setData }}>
+      {children}
+    </StepContext.Provider>
+  );
+};
