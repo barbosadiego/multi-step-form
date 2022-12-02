@@ -14,22 +14,30 @@ const StepTwo = () => {
         text="Please select which service you are interested in."
       />
       <Grid>
-        <div>
-          <img src="../assets/development.svg" alt="development" />
+        <Item>
+          <div>
+            <img src="../assets/development.svg" alt="development" />
+          </div>
           <p>Development</p>
-        </div>
-        <div>
-          <img src="../assets/web.svg" alt="web" />
+        </Item>
+        <Item>
+          <div>
+            <img src="../assets/web.svg" alt="web" />
+          </div>
           <p>Web Design</p>
-        </div>
-        <div>
-          <img src="../assets/marketing.svg" alt="marketing" />
+        </Item>
+        <Item>
+          <div>
+            <img src="../assets/marketing.svg" alt="marketing" />
+          </div>
           <p>Marketing</p>
-        </div>
-        <div>
-          <img src="../assets/setting.svg" alt="setting" />
+        </Item>
+        <Item>
+          <div>
+            <img src="../assets/setting.svg" alt="setting" />
+          </div>
           <p>Other</p>
-        </div>
+        </Item>
       </Grid>
       <StepControl>
         <Link to="/step_three">
@@ -44,3 +52,15 @@ const StepTwo = () => {
 };
 
 export default StepTwo;
+
+const Item = styled.div`
+  width: 100%;
+  height: 115px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  box-shadow: 0px 2px 11px rgba(69, 65, 164, 0.06),
+    0px 4px 10px rgba(31, 37, 89, 0.07);
+  border-radius: 16px;
+`;
