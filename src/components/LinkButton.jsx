@@ -8,7 +8,7 @@ export default LinkButton;
 
 const StyledButton = styled.button`
   margin-top: 30px;
-  width: 175px;
+  width: 200px;
   height: 60px;
   padding: 20px 40px;
   border-radius: 56px;
