@@ -4,7 +4,6 @@ import Grid from '../components/Grid';
 import Info from '../components/Info';
 import LinkButton from '../components/LinkButton';
 import StepControl from '../components/StepControl';
-import pxToRem from '../helpers/pxToRem';
 
 const StepTwo = () => {
   return (

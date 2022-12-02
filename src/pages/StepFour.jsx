@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import pxToRem from '../helpers/pxToRem';
 import { Link } from 'react-router-dom';
 import LinkButton from '../components/LinkButton';
-import Info from '../components/Info';
 import StepControl from '../components/StepControl';
 
 const StepFour = () => {
