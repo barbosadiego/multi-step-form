@@ -15,19 +15,19 @@ const StepTwo = () => {
       />
       <Grid>
         <div>
-          <img src="../assets/development.svg" alt="" />
+          <img src="../assets/development.svg" alt="development" />
           <p>Development</p>
         </div>
         <div>
-          <img src="../assets/web.svg" alt="" />
+          <img src="../assets/web.svg" alt="web" />
           <p>Web Design</p>
         </div>
         <div>
-          <img src="../assets/marketing.svg" alt="" />
+          <img src="../assets/marketing.svg" alt="marketing" />
           <p>Marketing</p>
         </div>
         <div>
-          <img src="../assets/setting.svg" alt="" />
+          <img src="../assets/setting.svg" alt="setting" />
           <p>Other</p>
         </div>
       </Grid>
