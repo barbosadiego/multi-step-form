@@ -58,9 +58,19 @@ const Item = styled.div`
   height: 115px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
   padding: 25px;
   box-shadow: 0px 2px 11px rgba(69, 65, 164, 0.06),
     0px 4px 10px rgba(31, 37, 89, 0.07);
   border-radius: 16px;
+
+  & > div {
+    background-color: rgba(74, 58, 255, 0.15);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
