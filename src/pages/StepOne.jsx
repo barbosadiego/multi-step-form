@@ -3,6 +3,7 @@ import pxToRem from '../helpers/pxToRem';
 import { Link } from 'react-router-dom';
 import LinkButton from '../components/LinkButton';
 import Info from '../components/Info';
+import StepControl from '../components/StepControl';
 
 const StepOne = () => {
   return (
@@ -51,9 +52,11 @@ const StepOne = () => {
           </div>
         </form>
       </StyledContent>
-      <Link to="/step_two">
-        <LinkButton>Next step</LinkButton>
-      </Link>
+      <StepControl>
+        <Link to="/step_two">
+          <LinkButton fill>Next step</LinkButton>
+        </Link>
+      </StepControl>
     </>
   );
 };
