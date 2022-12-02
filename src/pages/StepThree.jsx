@@ -70,6 +70,8 @@ const Item = styled.div`
     width: 100%;
     cursor: pointer;
     line-height: 115px;
+    font-weight: 500;
+    color: ${({ theme }) => theme.color.neutral800};
   }
 
   /* & > div {
