@@ -32,9 +32,18 @@ const StepFour = () => {
 export default StepFour;
 
 const StyledContent = styled.div`
-  height: 410px;
+  height: 405px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  & p {
+    line-height: ${pxToRem(30)};
+    font-weight: 400;
+    color: ${({ theme }) => theme.color.neutral600};
+    text-align: center;
+    max-width: 40ch;
+    margin-top: 1rem;
+  }
 `;
