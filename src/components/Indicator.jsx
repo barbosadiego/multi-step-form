@@ -1,6 +1,14 @@
+import { useContext, useEffect } from 'react';
+import { StepContext } from '../contexts/StepContext';
 import styled from 'styled-components';
 
-const Indicator = (props) => {
+const Indicator = () => {
+  const { data } = useContext(StepContext);
+
+  useEffect(() => {
+    console.log(data);
+  });
+
   return (
     <StyledIndicator>
       <div>1</div>
