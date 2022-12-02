@@ -1,16 +1,20 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { StepContext } from '../contexts/StepContext';
 import styled from 'styled-components';
 
 const Indicator = () => {
   const { data } = useContext(StepContext);
+  const ref = useRef();
 
   useEffect(() => {
-    console.log(data);
-  });
+    console.log(data.atualStep);
+    const items = [...ref.current.children];
+    items[data.atualStep].classList.add('active');
+    // console.log(items[data.atualStep]);
+  }, [data.atualStep]);
 
   return (
-    <StyledIndicator>
+    <StyledIndicator ref={ref}>
       <div>1</div>
       <div>2</div>
       <div>3</div>
@@ -38,16 +42,26 @@ const StyledIndicator = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
-  }
+    transition: 0.3s;
 
-  & div + div::before {
-    position: absolute;
-    content: '';
-    display: block;
-    width: 100px;
-    height: 6px;
-    border-radius: 4px;
-    background-color: ${({ theme }) => theme.color.neutral300};
-    left: -108px;
+    & + div::before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 100px;
+      height: 6px;
+      border-radius: 4px;
+      background-color: ${({ theme }) => theme.color.neutral300};
+      left: -108px;
+    }
+
+    // change indicator's color on each step
+    &.active {
+      background-color: ${({ theme }) => theme.color.primary};
+      color: ${({ theme }) => theme.color.neutral100};
+      &::before {
+        background-color: ${({ theme }) => theme.color.primary};
+      }
+    }
   }
 `;
