@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import StepTwo from './pages/StepTwo';
 import Container from './styles/container';
 import StepThree from './pages/StepThree';
+import StepFour from './pages/StepFour';
 
 const App = () => {
   const navigate = useNavigate();
@@ -31,6 +32,7 @@ const App = () => {
             <Route path="step_one" element={<StepOne />} />
             <Route path="step_two" element={<StepTwo />} />
             <Route path="step_three" element={<StepThree />} />
+            <Route path="step_four" element={<StepFour />} />
           </Route>
         </Routes>
       </Container>
