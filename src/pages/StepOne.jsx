@@ -16,7 +16,7 @@ const StepOne = () => {
   }, []);
 
   const handleSubmit = () => {
-    console.log(userData);
+    setData({ ...data, user: userData });
   };
 
   return (
@@ -34,7 +34,7 @@ const StepOne = () => {
               name="name"
               id="name"
               placeholder="John Carter"
-              value={userData.name}
+              value={userData.name || data.user.name}
               onChange={(e) =>
                 setUserData({ ...userData, name: e.target.value })
               }
@@ -47,7 +47,7 @@ const StepOne = () => {
               name="phone"
               id="phone"
               placeholder="Email address"
-              value={userData.email}
+              value={userData.email || data.user.email}
               onChange={(e) =>
                 setUserData({ ...userData, email: e.target.value })
               }
@@ -60,7 +60,7 @@ const StepOne = () => {
               name="email"
               id="email"
               placeholder="(123) 456-7890"
-              value={userData.phone}
+              value={userData.phone || data.user.phone}
               onChange={(e) =>
                 setUserData({ ...userData, phone: e.target.value })
               }
@@ -73,7 +73,7 @@ const StepOne = () => {
               name="company"
               id="company"
               placeholder="Company name"
-              value={userData.company}
+              value={userData.company || data.user.company}
               onChange={(e) =>
                 setUserData({ ...userData, company: e.target.value })
               }
