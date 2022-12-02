@@ -7,6 +7,7 @@ import StepOne from './pages/StepOne';
 import { useEffect } from 'react';
 import StepTwo from './pages/StepTwo';
 import Container from './styles/container';
+import StepThree from './pages/StepThree';
 
 const App = () => {
   const navigate = useNavigate();
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/" element={<Form />}>
             <Route path="step_one" element={<StepOne />} />
             <Route path="step_two" element={<StepTwo />} />
+            <Route path="step_three" element={<StepThree />} />
           </Route>
         </Routes>
       </Container>
