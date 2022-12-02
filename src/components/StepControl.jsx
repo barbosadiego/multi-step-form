@@ -16,5 +16,5 @@ const StyledStepControl = styled.div`
   bottom: -100px;
   left: -50px;
   width: 700px;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
 `;
