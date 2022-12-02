@@ -16,7 +16,7 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   font-size: ${({ theme }) => theme.fontSize.title5};
-  font-weight: 700;
+  font-weight: ${({ fill }) => (fill ? '700' : '400')};
   background-color: ${({ fill }) => (fill ? '#4A3AFF' : '#ffffff')};
   color: ${({ fill }) => (fill ? '#fff' : '#4A3AFF')};
   box-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);
