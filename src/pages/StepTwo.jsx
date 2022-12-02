@@ -40,11 +40,11 @@ const StepTwo = () => {
         </Item>
       </Grid>
       <StepControl>
-        <Link to="/step_three">
-          <LinkButton fill>Next step</LinkButton>
-        </Link>
         <Link to="/step_one">
           <LinkButton>Previous step</LinkButton>
+        </Link>
+        <Link to="/step_three">
+          <LinkButton fill>Next step</LinkButton>
         </Link>
       </StepControl>
     </div>
