@@ -1,17 +1,14 @@
 import styled from 'styled-components';
 
-const LinkButton = ({ children }) => {
-  return <StyledButton>{children}</StyledButton>;
+const LinkButton = ({ children, fill = false }) => {
+  return <StyledButton fill={fill}>{children}</StyledButton>;
 };
 
 export default LinkButton;
 
 const StyledButton = styled.button`
   margin-top: 30px;
-  position: absolute;
-  bottom: -100px;
-  right: 0;
-  width: 165px;
+  width: 175px;
   height: 60px;
   padding: 20px 40px;
   border-radius: 56px;
@@ -20,10 +17,10 @@ const StyledButton = styled.button`
   justify-content: center;
   font-size: ${({ theme }) => theme.fontSize.title5};
   font-weight: 700;
-  background-color: ${({ theme }) => theme.color.primary};
-  color: ${({ theme }) => theme.color.neutral100};
+  background-color: ${({ fill }) => (fill ? '#4A3AFF' : '#ffffff')};
+  color: ${({ fill }) => (fill ? '#fff' : '#4A3AFF')};
   box-shadow: 0px 3px 12px rgba(74, 58, 255, 0.18);
-  border: none;
+  border: ${({ fill }) => (fill ? 'none' : '1px solid #4A3AFF')};
   cursor: pointer;
 
   &:active {
