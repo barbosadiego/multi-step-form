@@ -63,6 +63,7 @@ const Item = styled.div`
   box-shadow: 0px 2px 11px rgba(69, 65, 164, 0.06),
     0px 4px 10px rgba(31, 37, 89, 0.07);
   border-radius: 16px;
+  cursor: pointer;
 
   & > div {
     background-color: rgba(74, 58, 255, 0.15);
