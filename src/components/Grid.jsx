@@ -11,4 +11,5 @@ const StyledGrid = styled.div`
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   margin-top: 40px;
+  gap: 20px;
 `;
