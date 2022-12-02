@@ -52,7 +52,7 @@ const StepOne = () => {
           </div>
         </form>
       </StyledContent>
-      <StepControl>
+      <StepControl reverse>
         <Link to="/step_two">
           <LinkButton fill>Next step</LinkButton>
         </Link>
