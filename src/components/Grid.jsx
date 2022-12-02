@@ -10,4 +10,5 @@ const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
+  margin-top: 40px;
 `;
