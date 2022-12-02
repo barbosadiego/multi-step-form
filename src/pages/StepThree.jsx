@@ -10,21 +10,33 @@ const StepThree = () => {
   return (
     <div>
       <Info
-        title="Our services"
-        text="Please select which service you are interested in."
+        title="What’s your project budget?"
+        text="Please select the project budget range you have in mind."
       />
       <Grid>
         <Item>
-          <p>Development</p>
+          <StyledInput>
+            <input type="radio" name="budget" id="budget1" />
+          </StyledInput>
+          <label htmlFor="budget1">$5.000 - $10.000</label>
         </Item>
         <Item>
-          <p>Web Design</p>
+          <StyledInput>
+            <input type="radio" name="budget" id="budget2" />
+          </StyledInput>
+          <label htmlFor="budget2">$10.000 - $20.000</label>
         </Item>
         <Item>
-          <p>Marketing</p>
+          <StyledInput>
+            <input type="radio" name="budget" id="budget3" />
+          </StyledInput>
+          <label htmlFor="budget3">$20.000 - $50.000</label>
         </Item>
         <Item>
-          <p>Other</p>
+          <StyledInput>
+            <input type="radio" name="budget" id="budget4" />
+          </StyledInput>
+          <label htmlFor="budget4">$50.000+</label>
         </Item>
       </Grid>
       <StepControl>
@@ -53,7 +65,14 @@ const Item = styled.div`
   border-radius: 16px;
   cursor: pointer;
 
-  & > div {
+  & label {
+    height: 115px;
+    width: 100%;
+    cursor: pointer;
+    line-height: 115px;
+  }
+
+  /* & > div {
     background-color: rgba(74, 58, 255, 0.15);
     width: 70px;
     height: 70px;
@@ -61,5 +80,45 @@ const Item = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+  } */
+`;
+
+const StyledInput = styled.div`
+  input[type='radio'] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: none;
+    /* Not removed via appearance */
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 1px solid ${({ theme }) => theme.color.neutral400};
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+  }
+
+  input[type='radio']::before {
+    content: '';
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    border: 8px solid ${({ theme }) => theme.color.primary};
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em white;
+    /* Windows High Contrast Mode */
+    background-color: none;
+  }
+
+  input[type='radio']:checked::before {
+    transform: scale(1);
   }
 `;
