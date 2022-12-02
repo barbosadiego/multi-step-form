@@ -3,8 +3,16 @@ import pxToRem from '../helpers/pxToRem';
 import { Link } from 'react-router-dom';
 import LinkButton from '../components/LinkButton';
 import StepControl from '../components/StepControl';
+import { useContext, useEffect } from 'react';
+import { StepContext } from '../contexts/StepContext';
 
 const StepFour = () => {
+  const { data, setData } = useContext(StepContext);
+
+  useEffect(() => {
+    setData({ ...data, atualStep: data.steps[3] });
+  }, []);
+
   return (
     <>
       <StyledContent>
