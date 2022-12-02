@@ -1,11 +1,19 @@
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Grid from '../components/Grid';
 import Info from '../components/Info';
 import LinkButton from '../components/LinkButton';
 import StepControl from '../components/StepControl';
+import { StepContext } from '../contexts/StepContext';
 
 const StepTwo = () => {
+  const { data, setData } = useContext(StepContext);
+
+  useEffect(() => {
+    setData({ ...data, atualStep: data.steps[1] });
+  }, []);
+
   return (
     <div>
       <Info
