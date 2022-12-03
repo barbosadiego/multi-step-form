@@ -29,10 +29,10 @@ const App = () => {
         </Header>
         <Routes>
           <Route path="/" element={<Form />}>
-            <Route path="step_one" element={<StepOne />} />
-            <Route path="step_two" element={<StepTwo />} />
-            <Route path="step_three" element={<StepThree />} />
-            <Route path="step_four" element={<StepFour />} />
+            <Route path="/step_one" element={<StepOne />} />
+            <Route path="/step_two" element={<StepTwo />} />
+            <Route path="/step_three" element={<StepThree />} />
+            <Route path="/step_four" element={<StepFour />} />
           </Route>
         </Routes>
       </Container>
