@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import pxToRem from '../helpers/pxToRem';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LinkButton from '../components/LinkButton';
 import StepControl from '../components/StepControl';
 import { useContext, useEffect } from 'react';
@@ -8,10 +8,34 @@ import { StepContext } from '../contexts/StepContext';
 
 const StepFour = () => {
   const { data, setData } = useContext(StepContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setData({ ...data, atualStep: data.steps[3] });
   }, []);
+
+  function handleClick() {
+    const project = {
+      client: data.user,
+      service: data.service,
+      budget: data.budget,
+    };
+    setData({
+      steps: ['one', 'two', 'three', 'four'],
+      atualStep: '',
+      user: {
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+      },
+      service: '',
+      budget: '',
+    });
+    console.log(project);
+    alert('You project will be request.');
+    navigate('/step_one');
+  }
 
   return (
     <>
@@ -25,7 +49,9 @@ const StepFour = () => {
           steps, and if all is okay, submit your message to receive a project
           quote in 24 - 48 hours.
         </p>
-        <LinkButton fill>Submit</LinkButton>
+        <LinkButton onClick={handleClick} fill>
+          Submit
+        </LinkButton>
       </StyledContent>
       <StepControl>
         <Link to="/step_three">
