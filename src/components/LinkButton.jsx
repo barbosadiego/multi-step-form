@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
-const LinkButton = ({ children, fill = false }) => {
-  return <StyledButton fill={fill}>{children}</StyledButton>;
+const LinkButton = ({ children, fill = false, onClick }) => {
+  return (
+    <StyledButton onClick={onClick} fill={fill}>
+      {children}
+    </StyledButton>
+  );
 };
 
 export default LinkButton;
