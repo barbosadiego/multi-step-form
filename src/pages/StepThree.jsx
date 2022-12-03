@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Grid from '../components/Grid';
 import Info from '../components/Info';
@@ -9,6 +9,7 @@ import { StepContext } from '../contexts/StepContext';
 
 const StepThree = () => {
   const { data, setData } = useContext(StepContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setData({ ...data, atualStep: data.steps[2] });
@@ -16,6 +17,15 @@ const StepThree = () => {
 
   function handleClick(e) {
     setData({ ...data, budget: e.target.value });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (data.budget) {
+      navigate('/step_four');
+    } else {
+      alert('Please choose an budget.');
+    }
   }
 
   return (
@@ -54,7 +64,7 @@ const StepThree = () => {
         <Link to="/step_two">
           <LinkButton>Previous step</LinkButton>
         </Link>
-        <Link to="/step_four">
+        <Link to="/step_four" onClick={handleSubmit}>
           <LinkButton fill>Next step</LinkButton>
         </Link>
       </StepControl>
