@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Grid from '../components/Grid';
 import Info from '../components/Info';
@@ -9,10 +9,24 @@ import { StepContext } from '../contexts/StepContext';
 
 const StepTwo = () => {
   const { data, setData } = useContext(StepContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setData({ ...data, atualStep: data.steps[1] });
   }, []);
+
+  function handleClick(e) {
+    setData({ ...data, service: e.target.innerText.toLowerCase() });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (data.service) {
+      navigate('/step_three');
+    } else {
+      alert('Please choose a service.');
+    }
+  }
 
   return (
     <div>
@@ -21,25 +35,25 @@ const StepTwo = () => {
         text="Please select which service you are interested in."
       />
       <Grid>
-        <Item>
+        <Item onClick={handleClick} active={data.service === 'development'}>
           <div>
             <img src="../assets/development.svg" alt="development" />
           </div>
           <p>Development</p>
         </Item>
-        <Item>
+        <Item onClick={handleClick} active={data.service === 'web design'}>
           <div>
             <img src="../assets/web.svg" alt="web" />
           </div>
           <p>Web Design</p>
         </Item>
-        <Item>
+        <Item onClick={handleClick} active={data.service === 'marketing'}>
           <div>
             <img src="../assets/marketing.svg" alt="marketing" />
           </div>
           <p>Marketing</p>
         </Item>
-        <Item>
+        <Item onClick={handleClick} active={data.service === 'other'}>
           <div>
             <img src="../assets/setting.svg" alt="setting" />
           </div>
@@ -50,7 +64,7 @@ const StepTwo = () => {
         <Link to="/step_one">
           <LinkButton>Previous step</LinkButton>
         </Link>
-        <Link to="/step_three">
+        <Link to="/step_three" onClick={handleSubmit}>
           <LinkButton fill>Next step</LinkButton>
         </Link>
       </StepControl>
@@ -65,12 +79,15 @@ const Item = styled.div`
   height: 115px;
   display: flex;
   align-items: center;
+  border: 2px solid transparent;
   gap: 1rem;
   padding: 25px;
   box-shadow: 0px 2px 11px rgba(69, 65, 164, 0.06),
     0px 4px 10px rgba(31, 37, 89, 0.07);
   border-radius: 16px;
   cursor: pointer;
+  transition: 0.1s;
+  border-color: ${({ active }) => (active ? ' #4A3AFF' : '')};
 
   & > div {
     background-color: rgba(74, 58, 255, 0.15);
