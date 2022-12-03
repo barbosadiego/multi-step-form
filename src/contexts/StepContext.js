@@ -12,8 +12,8 @@ export const StepContextProvider = ({ children }) => {
       phone: '',
       company: '',
     },
-    services: ['development', 'web design', 'marketing', 'other'],
-    budget: [],
+    service: '',
+    budget: '',
   });
 
   return (
