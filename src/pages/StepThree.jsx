@@ -14,6 +14,10 @@ const StepThree = () => {
     setData({ ...data, atualStep: data.steps[2] });
   }, []);
 
+  function handleClick(e) {
+    setData({ ...data, budget: e.target.value });
+  }
+
   return (
     <div>
       <Info
@@ -21,27 +25,27 @@ const StepThree = () => {
         text="Please select the project budget range you have in mind."
       />
       <Grid>
-        <Item>
-          <StyledInput>
-            <input type="radio" name="budget" id="budget1" />
+        <Item active={data.budget === 'budget1'}>
+          <StyledInput onClick={handleClick}>
+            <input type="radio" name="budget" id="budget1" value="budget1" />
           </StyledInput>
           <label htmlFor="budget1">$5.000 - $10.000</label>
         </Item>
-        <Item>
-          <StyledInput>
-            <input type="radio" name="budget" id="budget2" />
+        <Item active={data.budget === 'budget2'}>
+          <StyledInput onClick={handleClick}>
+            <input type="radio" name="budget" id="budget2" value="budget2" />
           </StyledInput>
           <label htmlFor="budget2">$10.000 - $20.000</label>
         </Item>
-        <Item>
-          <StyledInput>
-            <input type="radio" name="budget" id="budget3" />
+        <Item active={data.budget === 'budget3'}>
+          <StyledInput onClick={handleClick}>
+            <input type="radio" name="budget" id="budget3" value="budget3" />
           </StyledInput>
           <label htmlFor="budget3">$20.000 - $50.000</label>
         </Item>
-        <Item>
-          <StyledInput>
-            <input type="radio" name="budget" id="budget4" />
+        <Item active={data.budget === 'budget4'}>
+          <StyledInput onClick={handleClick}>
+            <input type="radio" name="budget" id="budget4" value="budget4" />
           </StyledInput>
           <label htmlFor="budget4">$50.000+</label>
         </Item>
@@ -61,6 +65,9 @@ const StepThree = () => {
 export default StepThree;
 
 const Item = styled.div`
+  border: 2px solid transparent;
+  border-color: ${({ active }) => (active ? ' #4A3AFF' : '')};
+
   width: 100%;
   height: 115px;
   display: flex;
