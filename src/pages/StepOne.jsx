@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import pxToRem from '../helpers/pxToRem';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LinkButton from '../components/LinkButton';
 import Info from '../components/Info';
 import StepControl from '../components/StepControl';
@@ -10,13 +10,20 @@ import { StepContext } from '../contexts/StepContext';
 const StepOne = () => {
   const { data, setData } = useContext(StepContext);
   const [userData, setUserData] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     setData({ ...data, atualStep: data.steps[0] });
   }, []);
 
-  const handleSubmit = () => {
-    setData({ ...data, user: userData });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (userData.name && userData.email) {
+      setData({ ...data, user: userData });
+      navigate('/step_two');
+    } else {
+      alert('Insert at least your name and email.');
+    }
   };
 
   return (
