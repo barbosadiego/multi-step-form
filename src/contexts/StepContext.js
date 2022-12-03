@@ -4,8 +4,8 @@ export const StepContext = createContext();
 
 export const StepContextProvider = ({ children }) => {
   const [data, setData] = useState({
-    steps: [0, 1, 2, 3],
-    atualStep: 0,
+    steps: ['one', 'two', 'three', 'four'],
+    atualStep: '',
     user: {
       name: '',
       email: '',
