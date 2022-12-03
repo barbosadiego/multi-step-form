@@ -4,7 +4,7 @@ import pxToRem from './helpers/pxToRem';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Form from './components/Form';
 import StepOne from './pages/StepOne';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import StepTwo from './pages/StepTwo';
 import Container from './styles/container';
 import StepThree from './pages/StepThree';
@@ -12,10 +12,25 @@ import StepFour from './pages/StepFour';
 
 const App = () => {
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(false);
+
+  function isDeviceMobile() {
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      setIsMobile(true);
+    }
+  }
 
   useEffect(() => {
+    isDeviceMobile();
     navigate('/step_one');
   }, []);
+
+  if (isMobile)
+    return (
+      <MobileError>
+        <p>This app must be open in a tablet or desktop</p>
+      </MobileError>
+    );
 
   return (
     <Theme>
@@ -53,5 +68,19 @@ const Header = styled.header`
     color: ${({ theme }) => theme.color.neutral600};
     font-size: ${({ theme }) => theme.fontSize.title5};
     line-height: ${pxToRem(30)};
+  }
+`;
+
+const MobileError = styled.div`
+  text-align: center;
+  width: 90%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  p {
+    font-size: ${pxToRem(30)};
   }
 `;
