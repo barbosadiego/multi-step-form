@@ -49,7 +49,7 @@ const StepFour = () => {
           steps, and if all is okay, submit your message to receive a project
           quote in 24 - 48 hours.
         </p>
-        <LinkButton onClick={handleClick} fill>
+        <LinkButton onClick={handleClick} filled>
           Submit
         </LinkButton>
       </StyledContent>

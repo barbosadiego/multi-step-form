@@ -90,7 +90,7 @@ const StepOne = () => {
       </StyledContent>
       <StepControl reverse>
         <Link to="/step_two" onClick={handleSubmit}>
-          <LinkButton fill>Next step</LinkButton>
+          <LinkButton filled>Next step</LinkButton>
         </Link>
       </StepControl>
     </>

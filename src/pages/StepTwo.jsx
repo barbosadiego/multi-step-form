@@ -65,7 +65,7 @@ const StepTwo = () => {
           <LinkButton>Previous step</LinkButton>
         </Link>
         <Link to="/step_three" onClick={handleSubmit}>
-          <LinkButton fill>Next step</LinkButton>
+          <LinkButton filled>Next step</LinkButton>
         </Link>
       </StepControl>
     </div>
