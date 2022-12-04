@@ -22,7 +22,7 @@ const App = () => {
 
   useEffect(() => {
     isDeviceMobile();
-    navigate('/step_one');
+    navigate('https://barbosadiego.github.io/multi-step-form/step_one');
   }, []);
 
   if (isMobile)
@@ -43,11 +43,26 @@ const App = () => {
           </p>
         </Header>
         <Routes>
-          <Route path="/" element={<Form />}>
-            <Route path="/step_one" element={<StepOne />} />
-            <Route path="/step_two" element={<StepTwo />} />
-            <Route path="/step_three" element={<StepThree />} />
-            <Route path="/step_four" element={<StepFour />} />
+          <Route
+            path="https://barbosadiego.github.io/multi-step-form"
+            element={<Form />}
+          >
+            <Route
+              path="https://barbosadiego.github.io/multi-step-form/step_one"
+              element={<StepOne />}
+            />
+            <Route
+              path="https://barbosadiego.github.io/multi-step-form/step_two"
+              element={<StepTwo />}
+            />
+            <Route
+              path="https://barbosadiego.github.io/multi-step-form/step_three"
+              element={<StepThree />}
+            />
+            <Route
+              path="https://barbosadiego.github.io/multi-step-form/step_four"
+              element={<StepFour />}
+            />
           </Route>
         </Routes>
       </Container>

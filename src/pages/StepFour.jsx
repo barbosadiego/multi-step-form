@@ -34,7 +34,7 @@ const StepFour = () => {
     });
     console.log(project);
     alert('You project will be request.');
-    navigate('/step_one');
+    navigate('https://barbosadiego.github.io/multi-step-form/step_one');
   }
 
   return (
@@ -54,7 +54,7 @@ const StepFour = () => {
         </LinkButton>
       </StyledContent>
       <StepControl>
-        <Link to="/step_three">
+        <Link to="https://barbosadiego.github.io/multi-step-form/step_three">
           <LinkButton>Previuos step</LinkButton>
         </Link>
       </StepControl>

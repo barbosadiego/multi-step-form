@@ -22,7 +22,7 @@ const StepThree = () => {
   function handleSubmit(e) {
     e.preventDefault();
     if (data.budget) {
-      navigate('/step_four');
+      navigate('https://barbosadiego.github.io/multi-step-form/step_four');
     } else {
       alert('Please choose an budget.');
     }
@@ -61,10 +61,13 @@ const StepThree = () => {
         </Item>
       </Grid>
       <StepControl>
-        <Link to="/step_two">
+        <Link to="https://barbosadiego.github.io/multi-step-form/step_two">
           <LinkButton>Previous step</LinkButton>
         </Link>
-        <Link to="/step_four" onClick={handleSubmit}>
+        <Link
+          to="https://barbosadiego.github.io/multi-step-form/step_four"
+          onClick={handleSubmit}
+        >
           <LinkButton filled>Next step</LinkButton>
         </Link>
       </StepControl>

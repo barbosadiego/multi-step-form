@@ -22,7 +22,7 @@ const StepTwo = () => {
   function handleSubmit(e) {
     e.preventDefault();
     if (data.service) {
-      navigate('/step_three');
+      navigate('https://barbosadiego.github.io/multi-step-form/step_three');
     } else {
       alert('Please choose a service.');
     }
@@ -61,10 +61,13 @@ const StepTwo = () => {
         </Item>
       </Grid>
       <StepControl>
-        <Link to="/step_one">
+        <Link to="https://barbosadiego.github.io/multi-step-form/step_one">
           <LinkButton>Previous step</LinkButton>
         </Link>
-        <Link to="/step_three" onClick={handleSubmit}>
+        <Link
+          to="https://barbosadiego.github.io/multi-step-form/step_three"
+          onClick={handleSubmit}
+        >
           <LinkButton filled>Next step</LinkButton>
         </Link>
       </StepControl>
