@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/multi-step-form/static/js/main.479839da.js",
+    "main.js": "/multi-step-form/static/js/main.ba609b77.js",
     "index.html": "/multi-step-form/index.html",
-    "main.479839da.js.map": "/multi-step-form/static/js/main.479839da.js.map"
+    "main.ba609b77.js.map": "/multi-step-form/static/js/main.ba609b77.js.map"
   },
   "entrypoints": [
-    "static/js/main.479839da.js"
+    "static/js/main.ba609b77.js"
   ]
 }
