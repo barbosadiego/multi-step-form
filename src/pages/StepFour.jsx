@@ -34,14 +34,17 @@ const StepFour = () => {
     });
     console.log(project);
     alert('You project will be request.');
-    navigate('https://barbosadiego.github.io/multi-step-form/step_one');
+    navigate('/step_one');
   }
 
   return (
     <>
       <StyledContent>
         <div>
-          <img src="../assets/submit.svg" alt="ok sign" />
+          <img
+            src="https://barbosadiego.github.io/multi-step-form/assets/submit.svg"
+            alt="ok sign"
+          />
         </div>
         <h3>Submit your quote request</h3>
         <p>
@@ -54,7 +57,7 @@ const StepFour = () => {
         </LinkButton>
       </StyledContent>
       <StepControl>
-        <Link to="https://barbosadiego.github.io/multi-step-form/step_three">
+        <Link to="/step_three">
           <LinkButton>Previuos step</LinkButton>
         </Link>
       </StepControl>

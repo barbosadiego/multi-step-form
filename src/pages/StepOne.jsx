@@ -20,7 +20,7 @@ const StepOne = () => {
     e.preventDefault();
     if (userData.name && userData.email) {
       setData({ ...data, user: userData });
-      navigate('https://barbosadiego.github.io/multi-step-form/step_two');
+      navigate('/step_two');
     } else {
       alert('Insert at least your name and email.');
     }
@@ -89,10 +89,7 @@ const StepOne = () => {
         </form>
       </StyledContent>
       <StepControl reverse>
-        <Link
-          to="https://barbosadiego.github.io/multi-step-form/step_two"
-          onClick={handleSubmit}
-        >
+        <Link to="/step_two" onClick={handleSubmit}>
           <LinkButton filled>Next step</LinkButton>
         </Link>
       </StepControl>

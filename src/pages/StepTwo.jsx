@@ -22,7 +22,7 @@ const StepTwo = () => {
   function handleSubmit(e) {
     e.preventDefault();
     if (data.service) {
-      navigate('https://barbosadiego.github.io/multi-step-form/step_three');
+      navigate('/step_three');
     } else {
       alert('Please choose a service.');
     }
@@ -37,37 +37,46 @@ const StepTwo = () => {
       <Grid>
         <Item onClick={handleClick} active={data.service === 'development'}>
           <div>
-            <img src="../assets/development.svg" alt="development" />
+            <img
+              src="https://barbosadiego.github.io/multi-step-form/assets/development.svg"
+              alt="development"
+            />
           </div>
           <p>Development</p>
         </Item>
         <Item onClick={handleClick} active={data.service === 'web design'}>
           <div>
-            <img src="../assets/web.svg" alt="web" />
+            <img
+              src="https://barbosadiego.github.io/multi-step-form/assets/web.svg"
+              alt="web"
+            />
           </div>
           <p>Web Design</p>
         </Item>
         <Item onClick={handleClick} active={data.service === 'marketing'}>
           <div>
-            <img src="../assets/marketing.svg" alt="marketing" />
+            <img
+              src="https://barbosadiego.github.io/multi-step-form/assets/marketing.svg"
+              alt="marketing"
+            />
           </div>
           <p>Marketing</p>
         </Item>
         <Item onClick={handleClick} active={data.service === 'other'}>
           <div>
-            <img src="../assets/setting.svg" alt="setting" />
+            <img
+              src="https://barbosadiego.github.io/multi-step-form/assets/setting.svg"
+              alt="setting"
+            />
           </div>
           <p>Other</p>
         </Item>
       </Grid>
       <StepControl>
-        <Link to="https://barbosadiego.github.io/multi-step-form/step_one">
+        <Link to="/step_one">
           <LinkButton>Previous step</LinkButton>
         </Link>
-        <Link
-          to="https://barbosadiego.github.io/multi-step-form/step_three"
-          onClick={handleSubmit}
-        >
+        <Link to="/step_three" onClick={handleSubmit}>
           <LinkButton filled>Next step</LinkButton>
         </Link>
       </StepControl>
